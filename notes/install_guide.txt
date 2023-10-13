@@ -1,0 +1,30 @@
+// install pnpm globally
+npm install -g pnpm
+
+// update pnpm but not working so do not use
+// pnpm up
+
+// create next app
+pnpm create next-app@latest .
+
+// install sass platform as developer dependency
+pnpm add --save-dev sass
+
+
+// add in next.config.js
+sassOptions: {
+  includePaths: [path.join(__dirname, 'styles')],
+},
+
+//run development server on http://localhost:3000/
+pnpm dev
+
+// Now Created Folder Structure inside src folder
+app,Components,data,libs,Sections,Styles
+
+// install dependencies
+// bcrypt forhashing password
+// mongodb mongoose for database
+// next-auth for authentification
+pnpm add bcrypt mongodb mongoose next-auth
+

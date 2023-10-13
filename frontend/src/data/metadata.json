@@ -1,0 +1,46 @@
+{
+  "data": {
+    "HeaderData": {
+      "header_Logo": {
+        "src": "FRNZ_logo_online.png",
+        "alt": "header_Logo"
+      },
+      "navbar": {
+        "nav_Links": [
+          { "id": 1, "href": "#home", "label": "Home", "dropdown": false },
+          {
+            "id": 2,
+            "href": "#about-us",
+            "label": "About Us",
+            "dropdown": false
+          },
+          {
+            "id": 3,
+            "href": "#products",
+            "label": "Products",
+            "dropdown": true,
+            "details": [
+              { "id": 1, "href": "#products1", "label": "Products 1" },
+              { "id": 2, "href": "#products2", "label": "Products 2" },
+              { "id": 3, "href": "#products3", "label": "Products 3" }
+            ]
+          },
+          {
+            "id": 4,
+            "href": "#contact-us",
+            "label": "Contact Us",
+            "dropdown": false
+          }
+        ],
+        "products_DropDown": [
+          { "id": 1, "href": "#products1", "label": "Products 1" },
+          { "id": 2, "href": "#products2", "label": "Products 2" },
+          { "id": 3, "href": "#products3", "label": "Products 3" }
+        ]
+      }
+    },
+    "FooterData": {
+      "footer_logo": ""
+    }
+  }
+}

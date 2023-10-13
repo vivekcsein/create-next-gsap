@@ -1,0 +1,88 @@
+@use "./variables.module" as *;
+@use "../Partials/breakpoints.module" as *;
+
+@mixin toggle_hide($show) {
+  display: $show;
+}
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin toggleColor {
+  color: nth($list: $toggle_text_color, $n: 1);
+  background-color: nth($list: $toggle_text_color, $n: 2);
+}
+
+@mixin toggle_phone_show {
+  @include res_desktop {
+    @include toggle_hide(none);
+  }
+  @include res_phone {
+    @include toggle_hide("block");
+  }
+}
+
+@mixin toggle_desktop_show {
+  @include res_desktop {
+    @include toggle_hide("block");
+  }
+  @include res_phone {
+    @include toggle_hide(none);
+  }
+}
+
+@mixin btn_navbar {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  color: nth($list: $toggle_text_color, $n: 1);
+  > div,
+  span {
+    color: nth($list: $toggle_text_color, $n: 1);
+  }
+  &:hover {
+    @include Anim_animateNavLikeButton;
+    scale: 1.1;
+    color: nth($list: $toggle_text_color, $n: 2);
+    > div,
+    span {
+      color: nth($list: $toggle_text_color, $n: 2);
+    }
+  }
+}
+
+@mixin Anim_animateNavLikeButton {
+  background-color: nth($list: $toggle_text_color, $n: 1);
+  border-radius: 2rem;
+  animation: animateNavLikeButton 0.1s linear;
+}
+
+@mixin btn_info {
+  cursor: pointer;
+  background-color: $white;
+  padding: 0rem 0.5rem;
+  color: #000000;
+}
+
+@keyframes animateNavLikeButton {
+  0% {
+    background-color: nth($list: $toggle_text_color, $n: 2);
+    border-radius: 0;
+  }
+  100% {
+    background-color: nth($list: $toggle_text_color, $n: 1);
+    border-radius: 2rem;
+  }
+}
+
+@keyframes gayab {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

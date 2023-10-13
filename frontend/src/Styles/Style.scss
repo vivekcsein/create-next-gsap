@@ -1,0 +1,25 @@
+// import "../Styles/Style.scss";
+// import "@/Styles/Vars.scss"
+
+//breakpoints
+@forward "./Partials/breakpoints.module";
+
+//farward utils
+@forward "./Partials/utils.module";
+
+//base classses
+@forward "./Partials/base.module";
+
+@use "./Partials/variables.module" as var;
+
+body {
+  background: var.$gradient;
+}
+
+h1 {
+  color: var.$text_color_heading;
+}
+
+p {
+  color: var.$text_color_para;
+}
