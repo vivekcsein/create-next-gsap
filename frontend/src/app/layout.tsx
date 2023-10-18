@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { getMetaData } from "@/libs/metadata";
 import { log } from "console";
 import Header from "@/Sections/Header";
+import Footer from "@/Sections/Footer";
 
 // import { Inter } from "next/font/google";
 
@@ -21,12 +22,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const metadata = await getMetaData();
-  const { HeaderData } = metadata.data;
+  const { HeaderData, FooterData } = metadata.data;
+
   return (
     <html lang="en">
       <body>
         <Header HeaderData={HeaderData} />
         <div>{children}</div>
+        <Footer FooterData={FooterData} />
       </body>
     </html>
   );

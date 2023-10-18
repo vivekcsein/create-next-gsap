@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  color: var.$text_color_heading;
+  color: nth($list: var.$toggle_text_color, $n: 1);
 }
 
 p {

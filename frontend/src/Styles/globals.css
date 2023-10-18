@@ -108,7 +108,7 @@
         box-sizing: border-box;
         outline: none;
         font-family: var(--font_1), var(--font_2), var(--font_3), var(--font_4), var(--font_5), var(--font_6), var(--font_7), var(--font_8), sans-serif;
-        color: var(--text_color);
+        /* color: var(--text_color); */
         text-decoration: none;
         list-style: none;
         /* font-size: 62.5%;     */

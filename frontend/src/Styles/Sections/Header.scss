@@ -1,5 +1,5 @@
-@use "../Vars.scss" as *;
-@use "../Style.scss" as *;
+@use "@/Styles/Vars.scss" as *;
+@use "@/Styles/Style.scss" as *;
 
 .Header {
   width: 100%;
@@ -41,6 +41,9 @@
       display: block;
       @include laptop {
         width: 65%;
+      }
+      @include desktop2k {
+        width: 40%;
       }
     }
 

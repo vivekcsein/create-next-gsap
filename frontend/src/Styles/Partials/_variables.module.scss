@@ -25,10 +25,12 @@ $bg_text_color: black;
 // button color
 $button_color: #f90c0cca;
 $button_color_onHover: #e43535;
-$border_color: #bcf92edc;
+$border_color: #c32ef9dc;
 $border_color_onHover: #eb5d3aeb;
 
 $black: #000000;
+$black_dim: #2b2929ea;
+
 $white: #ffffff;
 $red: #ff0000;
 $blue_fav: #4e4ee3;
@@ -91,15 +93,19 @@ $primary_color: (
   $primary_color4
 );
 
-$toggle_text_color: ($primary_color3, $bg_text_color);
-
 $bg_color: ($black, $bg_color1, $bg_color2, $bg_color3, $bg_color4);
+
+$bg_gradient: ($gradient, $gradient_input);
 
 $colorRange: ($color1, $color2, $color3, $color4, $color5);
 
 $colorFav: ($blue_fav, $pink_fav, $purple_fav, $orange_fav);
 
 $colorBtn: ($button_color, $button_color_onHover, $gradient);
+
+$toggle_text_color: ($primary_color3, $bg_text_color, $black_dim);
+
+$toggle_btn_color: ($primary_color3, $bg_text_color, $gradient_input);
 
 $Header_height: 5rem;
 

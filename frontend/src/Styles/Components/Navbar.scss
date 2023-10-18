@@ -1,5 +1,5 @@
-@use "../Vars.scss" as *;
-@use "../Style.scss" as *;
+@use "@/Styles/Vars.scss" as *;
+@use "@/Styles/Style.scss" as *;
 
 .Navbar_ul {
   width: 100%;
@@ -49,10 +49,14 @@
 }
 
 .BurgerIcon {
-  width: 130px;
+  width: 100px;
   height: $Header_height;
   display: none;
   @include toggle_phone_show;
+
+  @include phone {
+    width: 80px;
+  }
 }
 
 .toggle_BurgerIcon {

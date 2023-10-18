@@ -1,0 +1,25 @@
+@use "@/Styles/Vars.scss" as *;
+@use "@/Styles/Style.scss" as *;
+
+.Hero_Section {
+  width: 100%;
+  height: 88vh;
+  background-color: nth($list: $bg_gradient, $n: 1);
+  z-index: 10000;
+
+  .Hero_formSection {
+    width: 50%;
+    margin: auto;
+    @include res_phone {
+      width: 90%;
+    }
+  }
+
+  .Hero_searchBar {
+    width: 50%;
+    margin: auto;
+    @include res_phone {
+      width: 90%;
+    }
+  }
+}

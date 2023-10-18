@@ -67,6 +67,36 @@
   color: #000000;
 }
 
+@mixin inputBox {
+  // padding: 0.7rem;
+  border: none;
+  box-shadow: 2px 5px $box_shadow;
+  box-sizing: border-box;
+  background-color: nth($list: $bg_color, $n: 4);
+}
+
+@mixin inputText {
+  color: nth($list: $toggle_text_color, $n: 2);
+  font-weight: 600;
+  font-family: nth($list: $font_family, $n: 3);
+  font-size: calc($font_size_default * 1);
+}
+@mixin placeholder {
+  @include inputText;
+  font-family: nth($list: $font_family, $n: 5);
+  color: nth($list: $toggle_text_color, $n: 3);
+}
+
+input::placeholder {
+  @include placeholder;
+}
+input[type="text"] {
+  @include inputText;
+}
+input[type="password"] {
+  @include inputText;
+}
+
 @keyframes animateNavLikeButton {
   0% {
     background-color: nth($list: $toggle_text_color, $n: 2);

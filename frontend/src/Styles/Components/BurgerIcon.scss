@@ -1,5 +1,5 @@
-@use "../Vars.scss" as *;
-@use "../Style.scss" as *;
+@use "@/Styles/Vars.scss" as *;
+@use "@/Styles/Style.scss" as *;
 $burgerIconColor: nth(
   $list: $toggle_text_color,
   $n: 1,
