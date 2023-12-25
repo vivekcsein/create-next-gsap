@@ -1,0 +1,92 @@
+
+
+name: Deploy Next.js VivekCSE site to Git Actions
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout nextjs repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.18.0 # Change to your desired Node.js version
+        uses: actions/cache@v3
+        with:
+          ~/.pnpm-store
+          ${{ github.workspace }}/.next/cache
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            pnpm-store-${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+      # - name: Cache dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.pnpm-store
+      #     key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       pnpm-store-${{ runner.os }}-
+      - name: Install PNPM
+        run: |
+          npm install -g pnpm@latest
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Next.js
+        run: pnpm run build
+      - name: Static HTML export with Next.js
+        run: pnpm next export
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./out
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+# uses: actions/cache@v3
+# with:
+#     ~/.pnpm-store
+#     ${{ github.workspace }}/.next/cache
+#   key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+#   restore-keys: |
+#     pnpm-store-${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+
+      # - name: Cache dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.pnpm-store
+      #     key: pnpm-store-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       pnpm-store-${{ runner.os }}-
