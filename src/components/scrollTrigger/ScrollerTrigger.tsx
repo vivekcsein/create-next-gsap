@@ -61,8 +61,8 @@ const ScrollerTrigger = ({
           paddingBottom: paddBot,
         }}
       >
-        {triggerData.map((item) => {
-          return <ScrollerElement item={item} />;
+        {triggerData.map((item, index) => {
+          return <ScrollerElement key={index} item={item} />;
         })}
       </div>
     </div>

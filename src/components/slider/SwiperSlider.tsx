@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import { sliderData, sliderAnimTime } from "../../../libs/sliderData";
 import SliderElement from "./SliderElement";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,11 +19,12 @@ interface SwiperSlider {
 
 const SwiperSlider = ({ sliderData, sliderAnimTime }: SwiperSlider) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const elem_overlay = useRef<HTMLDivElement | null>(null);
   let tl: gsap.core.Timeline;
   let slide: gsap.core.Tween;
-  let elem_cross: HTMLDivElement;
+  // let elem_overlay: HTMLDivElement;
 
-  const funAnim = (item: HTMLDivElement) => {
+  const funAnim = (item: HTMLDivElement | null) => {
     tl = gsap.timeline({ repeat: 0 });
     slide = gsap.fromTo(
       item,
@@ -46,7 +47,9 @@ const SwiperSlider = ({ sliderData, sliderAnimTime }: SwiperSlider) => {
     const elemSlide = document.getElementsByClassName(
       "SwiperSlides_overlay"
     )[0] as HTMLElement;
-    elem_cross = elemSlide.querySelector(".elem_overlay") as HTMLDivElement;
+    // elem_overlay.current = elemSlide.querySelector(
+    //   ".elem_overlay"
+    // ) as HTMLDivElement;
   }, [currentSlide]);
 
   return (
@@ -71,10 +74,10 @@ const SwiperSlider = ({ sliderData, sliderAnimTime }: SwiperSlider) => {
       }}
       //slide start
       onSlideNextTransitionStart={() => {
-        funAnim(elem_cross);
+        funAnim(elem_overlay?.current);
       }}
       onSlidePrevTransitionStart={() => {
-        funAnim(elem_cross);
+        funAnim(elem_overlay?.current);
       }}
       //slide end
       onSlideNextTransitionEnd={(swiper) => {
@@ -105,7 +108,10 @@ const SwiperSlider = ({ sliderData, sliderAnimTime }: SwiperSlider) => {
           zIndex: "1",
         }}
       >
-        <SliderOverlay item={sliderData[currentSlide]} />
+        <SliderOverlay
+          item={sliderData[currentSlide]}
+          refObject={elem_overlay}
+        />
       </div>
     </Swiper>
   );
