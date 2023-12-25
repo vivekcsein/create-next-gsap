@@ -1,23 +1,18 @@
 import Image from "next/image";
 import React from "react";
 interface SliderElementProps {
-  item: {
-    id: String;
-    styleClass: string;
-    imgSrc: string;
-    alt: string;
-    color: string;
-  };
+  item: sliderElement;
 }
 
 const SliderElement = ({ item }: SliderElementProps) => {
   return (
-    <section className="elem">
+    <section className="elem" style={{ width: "100%", height: "100%" }}>
       <Image
-        width={1440}
-        height={650}
+        width={item.imgWidth}
+        height={item.imgHeight}
         alt={item.alt}
         src={item.imgSrc}
+        loading="lazy"
         className={item.styleClass}
         style={{ width: "100%", height: "auto" }}
       />
