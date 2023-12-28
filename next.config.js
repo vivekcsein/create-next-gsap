@@ -9,10 +9,15 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: '**.githubusercontent.com',
+                // loader: 'custom',
+                // loaderFile: './my-loader.ts',
             },
         ],
+        unoptimized: true,
     },
-    output:"export"
+    output: "export",
+    distDir: 'dist',
+
 }
 
 module.exports = nextConfig

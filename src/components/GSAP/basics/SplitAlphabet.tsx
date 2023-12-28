@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
-import { spliteffect } from "../basics/GSAPEffects";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { spliteffect } from "../basics/GSAPEffects";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerEffect(spliteffect);

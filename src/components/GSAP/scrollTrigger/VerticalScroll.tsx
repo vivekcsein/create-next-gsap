@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import ScrollerElement from "./ScrollerElement";
 
 gsap.registerPlugin(ScrollTrigger);
 type VerticalScrollProps = {
