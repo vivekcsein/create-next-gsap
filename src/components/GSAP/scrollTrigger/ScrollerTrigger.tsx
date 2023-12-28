@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
-import ScrollerElement from "../scrollTrigger/ScrollerElement";
+import ScrollerElement from "./ScrollerElement";
 
 gsap.registerPlugin(ScrollTrigger);
 type GsapScrollTriggerProps = {
