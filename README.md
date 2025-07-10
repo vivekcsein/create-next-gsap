@@ -1,13 +1,13 @@
-<h1>
-A Frontend Beginner Project
-</h1>
+<h3>Yes, I can create any animation and i dont need JQUERY anymore</h3>
 
 <h2>Author:- <a target="_blank" href="https://github.com/vivekcsein">@vivekcsein</a> </h2>
 
 <h1>Project Key Features</h1>
 
-<li><i>Project features basic setups in nextjs to boost your development</i> </li>
-<li><i>It has build-in navbar/header, loading page, seo, color themes, shadcn components </i></li>
+<li><i>This contains standalone gsap animations which anyone can integrate into the project</i> </li>
+<li><i>This contains a basic template 2025 with all the basic components</i> </li>
+
+<p>pnpm add swiper gsap @gsap/react</p>
 
 <h2>Tech Used: </h2>
 
