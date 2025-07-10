@@ -1,0 +1,77 @@
+{
+  "rootLayoutData": {
+    "HeaderData": {
+      "header_logo": {
+        "src": "/logo.png",
+        "alt": "Logo",
+        "href": "/"
+      },
+      "navbarlinks": [
+        { "id": 1, "href": "/", "label": "Home", "icon": "House" },
+        {
+          "id": 2,
+          "href": "#services",
+          "label": "Services",
+          "icon": "Package",
+          "sublinks": [
+            {
+              "id": 1,
+              "href": "/web development",
+              "label": "web development",
+              "icon": "Code"
+            },
+            {
+              "id": 2,
+              "href": "/game development",
+              "label": "game development",
+              "icon": "Gamepad"
+            },
+            {
+              "id": 3,
+              "href": "/content writing",
+              "label": "content writing",
+              "icon": "FileText"
+            }
+          ]
+        }
+      ]
+    },
+    "FooterData": {
+      "footer_logo": "",
+      "copyright_message": "Copyright © 2025 sparkverse.inc All Right are Reserved.",
+
+      "footerlinks": [
+        {
+          "id": 1,
+          "label": "Sparkverse",
+          "href": "https://sparkverse.com",
+          "discription": "Sparkverse is a platform for developers to showcase their skills and connect with opportunities."
+        },
+        {
+          "id": 2,
+          "label": "Services",
+          "sublinks": [
+            {
+              "id": 1,
+              "href": "/web-development",
+              "label": "web development",
+              "icon": "Code"
+            },
+            {
+              "id": 2,
+              "href": "/game-development",
+              "label": "game development",
+              "icon": "Gamepad"
+            },
+            {
+              "id": 3,
+              "href": "/content-writing",
+              "label": "content writing",
+              "icon": "FileText"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
