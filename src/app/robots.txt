@@ -1,6 +1,0 @@
-
-User-Agent: *
-Allow: /
-Disallow: /private/
-
-Sitemap: https://sparkverse.in/sitemap.xml
