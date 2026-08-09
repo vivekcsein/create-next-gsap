@@ -1,0 +1,71 @@
+{
+  "layout": {
+    "header": {
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Logo",
+        "href": "/"
+      },
+      "navigation": [
+        {
+          "id": "home",
+          "title": "Home",
+          "href": "/"
+        },
+        {
+          "id": "services",
+          "title": "Services",
+          "dropdown": [
+            {
+              "category": "Services",
+              "items": [
+                {
+                  "label": "Web Development",
+                  "href": "/web-development"
+                },
+                {
+                  "label": "Game Development",
+                  "href": "/game-development"
+                },
+                {
+                  "label": "Content Writing",
+                  "href": "/content-writing"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "logo": "",
+      "copyright": "Copyright © 2026 vivekcsein",
+      "links": [
+        {
+          "id": "vivekcsein",
+          "label": "vivekcsein",
+          "href": "https://vivekcse.in",
+          "description": "Visit vivekcse.in for custom websites and portfolios."
+        },
+        {
+          "id": "services",
+          "label": "Services",
+          "items": [
+            {
+              "label": "Web Development",
+              "href": "/web-development"
+            },
+            {
+              "label": "Game Development",
+              "href": "/game-development"
+            },
+            {
+              "label": "Content Writing",
+              "href": "/content-writing"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

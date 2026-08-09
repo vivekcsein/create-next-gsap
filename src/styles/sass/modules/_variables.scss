@@ -1,0 +1,69 @@
+@use "sass:map";
+
+// ============================================
+// Theme Colors
+// ============================================
+
+$colors: (
+  // Base
+  "background": var(--background),
+  "foreground": var(--foreground),
+
+  // Primary
+  "primary": var(--primary),
+  "primary-foreground": var(--primary-foreground),
+
+  // Secondary
+  "secondary": var(--secondary),
+  "secondary-foreground": var(--secondary-foreground),
+
+  // Accent
+  "accent": var(--accent),
+  "accent-foreground": var(--accent-foreground),
+
+  // Destructive
+  "destructive": var(--destructive),
+  "destructive-foreground": var(--destructive-foreground),
+
+  // Muted
+  "muted": var(--muted),
+  "muted-foreground": var(--muted-foreground),
+
+  // Card
+  "card": var(--card),
+  "card-foreground": var(--card-foreground),
+
+  // Popover
+  "popover": var(--popover),
+  "popover-foreground": var(--popover-foreground),
+
+  // Form
+  "border": var(--border),
+  "input": var(--input),
+  "ring": var(--ring),
+
+  // Charts
+  "chart-1": var(--chart-1),
+  "chart-2": var(--chart-2),
+  "chart-3": var(--chart-3),
+  "chart-4": var(--chart-4),
+  "chart-5": var(--chart-5),
+
+  // Sidebar
+  "sidebar": var(--sidebar),
+  "sidebar-foreground": var(--sidebar-foreground),
+  "sidebar-primary": var(--sidebar-primary),
+  "sidebar-primary-foreground": var(--sidebar-primary-foreground),
+  "sidebar-accent": var(--sidebar-accent),
+  "sidebar-accent-foreground": var(--sidebar-accent-foreground),
+  "sidebar-border": var(--sidebar-border),
+  "sidebar-ring": var(--sidebar-ring)
+);
+
+@function color($name) {
+  @if not map.has-key($colors, $name) {
+    @error "Unknown color `#{$name}`. Available colors: #{map.keys($colors)}";
+  }
+
+  @return map.get($colors, $name);
+}
