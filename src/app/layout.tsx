@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "@/styles/globals.css";
+import "@/styles/globals.scss";
 import Script from "next/script";
 import AppClientLayout from "@/components/layouts/AppClientLayout";
 import AppServerLayout from "@/components/layouts/AppServerLayout";
@@ -14,7 +15,11 @@ export const metadata: Metadata = {
   description: "A top 1% animation and creativity for next.js projects",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"

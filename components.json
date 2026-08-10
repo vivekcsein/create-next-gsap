@@ -14,7 +14,7 @@
   "rtl": false,
   "aliases": {
     "components": "@/components",
-    "utils": "@/packages/utils",
+    "utils": "@/packages/utils/cn",
     "ui": "@/components/ui/shadcn",
     "lib": "@/packages",
     "hooks": "@/packages/hooks"
